@@ -34,7 +34,7 @@ describe OmniAuth::Strategies::Tink do
     end
 
     it 'should have correct authorize url' do
-      expect(subject.options.client_options.authorize_url).to eq('/auth')
+      expect(subject.options.client_options.authorize_url).to eq('https://oauth.tink.se/0.4/authorize')
     end
 
     it 'should have correct token url' do
@@ -128,7 +128,7 @@ describe OmniAuth::Strategies::Tink do
       allow(subject).to receive(:full_host).and_return('https://example.com')
       allow(subject).to receive(:script_name).and_return('/sub_uri')
 
-      expect(subject.callback_url).to eq('https://example.com/sub_uri/auth/bunq/callback')
+      expect(subject.callback_url).to eq('https://example.com/sub_uri/auth/tink/callback')
     end
   end
 end

@@ -5,7 +5,7 @@ module OmniAuth
     class Tink < OmniAuth::Strategies::OAuth2
       option :client_options, {
         site: "https://api.tink.se/api/v1",
-        authorize_url: "/auth",
+        authorize_url: "https://oauth.tink.se/0.4/authorize",
         token_url: "/oauth/token"
       }
 
